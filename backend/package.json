@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "mocha",
+    "test:manual": "node ./test.js",
     "start": "node server.js",
     "dev": "nodemon server.js",
     "prod": "node server.js"
