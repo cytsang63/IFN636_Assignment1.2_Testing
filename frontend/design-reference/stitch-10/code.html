@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script type='text/javascript' nonce='Mn2omfpXfXsOuDMFR4nKpg==' src='https://contribution.usercontent.google.com/0FRVgIh4ysH4FW6ptDQXLGaP87-wV30oHzzhrNl38Epor5OmxpH5yEjRKmS2KB4rbjQruOz3qSjsD1am68wdqou7G_B2u6yTq79H9WtmnAqjd3abM0A_Z6cI3NgoZ-nnVbzTwxFHkDZpvMw6JmQj62Nxvq9C1su5mMFZadV_lKAamMEMHXhkPypEjmFFDbLUXgrrO8Kcdbx2O7aAvcIBxLh1s1-PWVVTBD8m6PPW2T7vt2Hg7WxDjH_mrWZ7pMpePimSNlNXWWraPYeRR7KrfZVU0ItwUvxEbGPfRL4jDvCFAeA8Zmc0tC3Iitu07mDGyncnv779cHXOffwP9WpJsfiGnEFYz5jqhs8h18K8FO-QXOqPQhFXJf9mlF58cKmwup9Klq9j1YNmrP80O91XB5k9_l-agnrFn9IwZeT1s48ucUMdjWP-hbj_XBgSnVgPMwrcQ8T24Nvyv8vn7ckjj4-l_9YwrrfV04MWB49IQ6TC7i7axqy23hl9jE7C6FchI52Tvzea8G11JIWDKjTyLZt0V6ffMdJG9DWQ_VQz34mB-Z92K3knfTRI3_P56WYD-hK8YyTqAaBeP6XonIv-nBq_B00pgPjNwlOGte_LMB86rbtOnSydVz0hSDlYH4bhtl64ccekw9PRgZ7z2UVd3FA6tlpzTodhkMXdWLpfmx0s22ltJP-DGuXmN937AmPOMOmKOO0DOX34rScKhUy3XvruDiexJZLrZO8vZMLMewn3PT1erwR8VHz1Ln7IRCu1yCZwQsslM3ZnydEUo9XPGX8zWwkHwZgfrgaX'></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#ffffff",
+              "tertiary-fixed-dim": "#474747",
+              "tertiary": "#3b3b3b",
+              "surface-container-low": "#f3f3f3",
+              "primary-container": "#3b3b3b",
+              "on-surface-variant": "#474747",
+              "error-container": "#ffdad6",
+              "surface-variant": "#e2e2e2",
+              "on-tertiary-fixed-variant": "#e2e2e2",
+              "outline-variant": "#c6c6c6",
+              "secondary-fixed-dim": "#acabab",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-highest": "#e2e2e2",
+              "outline": "#777777",
+              "error": "#ba1a1a",
+              "surface-container": "#eeeeee",
+              "on-primary": "#e2e2e2",
+              "on-error-container": "#410002",
+              "background": "#f9f9f9",
+              "secondary-container": "#d5d4d4",
+              "on-secondary-fixed-variant": "#3b3b3b",
+              "secondary-fixed": "#c7c6c6",
+              "surface-tint": "#5e5e5e",
+              "surface-bright": "#f9f9f9",
+              "surface": "#f9f9f9",
+              "secondary": "#5e5e5e",
+              "on-primary-fixed": "#ffffff",
+              "surface-dim": "#dadada",
+              "on-background": "#1a1c1c",
+              "on-surface": "#1a1c1c",
+              "primary": "#000000",
+              "primary-fixed-dim": "#474747",
+              "on-secondary-container": "#1b1c1c",
+              "on-primary-container": "#ffffff",
+              "on-tertiary-container": "#ffffff",
+              "on-primary-fixed-variant": "#e2e2e2",
+              "on-error": "#ffffff",
+              "inverse-surface": "#2f3131",
+              "tertiary-container": "#747474",
+              "tertiary-fixed": "#5e5e5e",
+              "inverse-primary": "#c6c6c6",
+              "on-secondary": "#ffffff",
+              "inverse-on-surface": "#f1f1f1",
+              "on-secondary-fixed": "#1b1c1c",
+              "surface-container-high": "#e8e8e8",
+              "primary-fixed": "#5e5e5e",
+              "on-tertiary": "#e2e2e2"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f9f9f9;
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .monolith-shadow {
+            box-shadow: 0px 20px 40px rgba(26, 28, 28, 0.06);
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 z-50 flex flex-col py-8 border-r border-[#e2e2e2] bg-[#f9f9f9]">
+<div class="px-8 mb-12">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: &#39;FILL&#39; 1;">monorail</span>
+</div>
+<div>
+<h1 class="font-[&#39;Manrope&#39;] font-black text-2xl text-black leading-none">Admin</h1>
+<p class="font-[&#39;Inter&#39;] font-medium text-[10px] tracking-widest uppercase text-zinc-500">Management</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-black font-bold border-r-4 border-black bg-white transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-[&#39;Inter&#39;] font-medium text-sm tracking-wide uppercase">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-black hover:bg-[#f3f3f3] transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-[&#39;Inter&#39;] font-medium text-sm tracking-wide uppercase">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-black hover:bg-[#f3f3f3] transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-[&#39;Inter&#39;] font-medium text-sm tracking-wide uppercase">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-black hover:bg-[#f3f3f3] transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-[&#39;Inter&#39;] font-medium text-sm tracking-wide uppercase">Users</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-zinc-500 hover:text-black hover:bg-[#f3f3f3] transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-[&#39;Inter&#39;] font-medium text-sm tracking-wide uppercase">Reports</span>
+</a>
+</nav>
+<div class="px-4 mt-auto pt-8 border-t border-[#e2e2e2]">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-bold text-sm tracking-wide uppercase mb-6 flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Report
+            </button>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-zinc-500 hover:text-black transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-[&#39;Inter&#39;] font-medium text-sm tracking-wide uppercase">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-zinc-500 hover:text-black transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-[&#39;Inter&#39;] font-medium text-sm tracking-wide uppercase">Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 min-h-screen">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-40 bg-white/80 backdrop-blur-xl monolith-shadow flex items-center justify-between px-12 h-16">
+<div class="flex items-center gap-8">
+<h2 class="font-[&#39;Manrope&#39;] font-black tracking-tighter text-xl text-black">Admin Portal</h2>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400">search</span>
+<input class="bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-1.5 text-sm focus:ring-2 focus:ring-black focus:bg-white transition-all w-64" placeholder="Search data..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-zinc-500 hover:text-black transition-colors active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-zinc-500 hover:text-black transition-colors active:scale-95">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="flex items-center gap-3 border-l border-[#e2e2e2] pl-6">
+<div class="text-right">
+<p class="text-xs font-bold leading-none">Admin User</p>
+<p class="text-[10px] text-zinc-500">Super Admin</p>
+</div>
+<img class="w-8 h-8 rounded-full object-cover" data-alt="close-up portrait of a professional male administrator in a clean office setting with soft natural window lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBKXrTlbyvudOTnV0xuWZGRkiFhb2LihFdHDiTj07BBeETpkuoCtVylTIQ-DTLZHP7FTbitQ3hUy9xHTsITrzj4diSNIeRbVCKyQvg8zojyePpdywMppR2IT3etx_UjMX3w1b5VpV3G4xQlNnvpmRB_CxpRCK1xdFH9y30wUdzzvCsdL3CRhBaLUX-1oGSk6vvr-2wEiAJvu8CZUQGM0In0vPjT5EXOjh-7iM4qEnwf7d0pL_j_gBRfkH9gCgcFcwpbJqTmwyaug"/>
+</div>
+</div>
+</header>
+<div class="p-12 space-y-12 max-w-7xl mx-auto">
+<!-- Hero Stats / Bento Grid -->
+<section class="grid grid-cols-12 gap-8">
+<div class="col-span-12">
+<h3 class="font-[&#39;Manrope&#39;] font-extrabold text-4xl tracking-tight mb-2">Performance Overview</h3>
+<p class="text-zinc-500 font-medium">Real-time data visualization and contributor insights.</p>
+</div>
+<!-- Metric Card 1 -->
+<div class="col-span-12 md:col-span-6 bg-white p-8 rounded-xl monolith-shadow relative overflow-hidden group">
+<div class="relative z-10">
+<p class="font-[&#39;Inter&#39;] font-medium text-sm tracking-widest uppercase text-zinc-500 mb-4">Total Projects</p>
+<div class="flex items-end gap-4">
+<span class="font-[&#39;Manrope&#39;] font-black text-6xl tracking-tighter">14,486</span>
+<div class="mb-2 flex items-center text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full text-xs font-bold">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                                +10%
+                            </div>
+</div>
+<p class="mt-4 text-xs text-zinc-400">vs. last month (Oct 2025)</p>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[160px]">stack</span>
+</div>
+</div>
+<!-- Metric Card 2 -->
+<div class="col-span-12 md:col-span-6 bg-white p-8 rounded-xl monolith-shadow relative overflow-hidden group">
+<div class="relative z-10">
+<p class="font-[&#39;Inter&#39;] font-medium text-sm tracking-widest uppercase text-zinc-500 mb-4">Total Users</p>
+<div class="flex items-end gap-4">
+<span class="font-[&#39;Manrope&#39;] font-black text-6xl tracking-tighter">1,205</span>
+<div class="mb-2 flex items-center text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full text-xs font-bold">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                                +5%
+                            </div>
+</div>
+<p class="mt-4 text-xs text-zinc-400">Growth trajectory stable</p>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[160px]">group</span>
+</div>
+</div>
+<!-- Line Chart Section -->
+<div class="col-span-12 lg:col-span-8 bg-white p-10 rounded-xl monolith-shadow">
+<div class="flex justify-between items-center mb-10">
+<div>
+<h4 class="font-[&#39;Manrope&#39;] font-bold text-lg tracking-tight">Project Growth</h4>
+<p class="text-xs text-zinc-400">Oct 2025 - Mar 2026</p>
+</div>
+<div class="flex gap-2">
+<button class="bg-surface-container-low px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider">Export PDF</button>
+<button class="bg-primary text-white px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider">Settings</button>
+</div>
+</div>
+<!-- SVG Chart -->
+<div class="relative h-64 w-full">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 800 200">
+<!-- Grid Lines -->
+<line stroke="#f3f3f3" stroke-width="1" x1="0" x2="800" y1="0" y2="0"></line>
+<line stroke="#f3f3f3" stroke-width="1" x1="0" x2="800" y1="50" y2="50"></line>
+<line stroke="#f3f3f3" stroke-width="1" x1="0" x2="800" y1="100" y2="100"></line>
+<line stroke="#f3f3f3" stroke-width="1" x1="0" x2="800" y1="150" y2="150"></line>
+<!-- Area Gradient -->
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="black" stop-opacity="0.1"></stop>
+<stop offset="100%" stop-color="black" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,180 L160,150 L320,165 L480,100 L640,110 L800,40 L800,200 L0,200 Z" fill="url(#chartGradient)"></path>
+<!-- Main Line -->
+<path d="M0,180 L160,150 L320,165 L480,100 L640,110 L800,40" fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<!-- Data Points -->
+<circle cx="160" cy="150" fill="white" r="4" stroke="black" stroke-width="2"></circle>
+<circle cx="480" cy="100" fill="white" r="4" stroke="black" stroke-width="2"></circle>
+<circle cx="800" cy="40" fill="white" r="4" stroke="black" stroke-width="2"></circle>
+</svg>
+<!-- Labels -->
+<div class="flex justify-between mt-4 text-[10px] font-bold text-zinc-400 uppercase tracking-widest px-1">
+<span>Oct</span>
+<span>Nov</span>
+<span>Dec</span>
+<span>Jan</span>
+<span>Feb</span>
+<span>Mar</span>
+</div>
+</div>
+</div>
+<!-- Top Contributors Sidebar-style card -->
+<div class="col-span-12 lg:col-span-4 space-y-8">
+<div class="bg-white p-8 rounded-xl monolith-shadow h-full">
+<div class="flex items-center justify-between mb-8">
+<h4 class="font-[&#39;Manrope&#39;] font-bold text-lg tracking-tight">Top Contributors</h4>
+<span class="material-symbols-outlined text-zinc-400">more_vert</span>
+</div>
+<div class="space-y-6">
+<!-- Contributor 1 -->
+<div class="flex items-center gap-4 group cursor-pointer">
+<img class="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="professional headshot of a mature man with a beard, studio lighting, sharp focus, gray background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWTOq1L7-riYTHnwbyGNKxJXbiP-QjzGcZOMYTpLnpJvmD91vTy0CISCNErwX987mqEIjczLonpHe8TRqLLxVhOhod2UlqyxiONYwBlAn_9mIsF0uwyJ0bEl-EGXjNfiGh2Za1wgZH8KVs1LChBxCa99hZ_dOWCTSF9g8gzK2JGMrFuKqBaN-GKeOqwG55awayEOWWcmljlA9lmoI-LrnXaj_zaSJ921ASMREQ36HMhBpKXWjuRS8nSd7VEIub2Yk7ACSNJnns8w"/>
+<div class="flex-1">
+<p class="text-sm font-bold">Fernando Alonso</p>
+<p class="text-xs text-zinc-400">fernando.a@admin.com</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-black uppercase tracking-tighter">482</p>
+<p class="text-[9px] text-zinc-400 uppercase">Commits</p>
+</div>
+</div>
+<!-- Contributor 2 -->
+<div class="flex items-center gap-4 group cursor-pointer">
+<img class="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="portrait of a focused professional man in business casual attire with bright office lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr0m_zA3ao-D__RLFRH4WXgmLpnl9aB-qBj_xGC4yt_g8BBhqtH2wP8Td_0JdUgPgxc-OqQrDitN8D92rinC_Qo3TRwpxaOczQMaZ9Ac_gxX4xm_ZL2_mu6_3DAL8gz_tnwxznedY1-XhRNuT4c_EnYlm_iLSo3YV0oINUD9iSNehCHDLV34kQfb-S7blzFXsVPq1s2pNKP88IMzbZpH1BpOXe1NIQfYdLa1Vm9aagVXM1-B6VLpRzRUIT7TgFq6raTWAoqWAKag"/>
+<div class="flex-1">
+<p class="text-sm font-bold">Mesut Ozil</p>
+<p class="text-xs text-zinc-400">mesut.ozil@admin.com</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-black uppercase tracking-tighter">395</p>
+<p class="text-[9px] text-zinc-400 uppercase">Commits</p>
+</div>
+</div>
+<!-- Contributor 3 -->
+<div class="flex items-center gap-4 group cursor-pointer">
+<img class="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="close-up studio portrait of a man with minimalist aesthetic and dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfRY1Q-JLPV5FJB2qQsIt9fVTi_50MZOxyVlYAbb28hy0Bm-tsnlj8gQ49UXAHRpfqQjrSQ0p-9AJXAJVd_5bwq6PlurBZ-xpXPYHlUPsv62yuxl9BFH_tS5rtzoZ8HGD-GQYFMRfh51dJn1HB4jDHAzmqWe1v6tghZKiVYA_Dwao7GzHj4PrglId4wFA4Lx88_gvUlqS01elE8Bk5cfarQe-T2jp0gfPSsQqffunvmE7Uuvty4TGUl8NCO3YqZbAbypo8vW9pwA"/>
+<div class="flex-1">
+<p class="text-sm font-bold">Lewis Hamilton</p>
+<p class="text-xs text-zinc-400">lewis.h@admin.com</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-black uppercase tracking-tighter">312</p>
+<p class="text-[9px] text-zinc-400 uppercase">Commits</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-3 border border-[#e2e2e2] rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all">
+                            View All Rankings
+                        </button>
+</div>
+</div>
+</section>
+<!-- Bottom Editorial Section -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12">
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col justify-between group cursor-pointer hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-black mb-12 text-4xl">terminal</span>
+<div>
+<h5 class="font-[&#39;Manrope&#39;] font-bold text-xl mb-2">System Health</h5>
+<p class="text-zinc-500 text-sm mb-6 leading-relaxed">Infrastructure monitoring across all 14 active node clusters.</p>
+<span class="text-[10px] font-black uppercase border-b-2 border-black pb-1">Operational</span>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-8 rounded-xl flex flex-col justify-between group cursor-pointer active:scale-95 transition-all">
+<span class="material-symbols-outlined text-on-primary mb-12 text-4xl">security</span>
+<div>
+<h5 class="font-[&#39;Manrope&#39;] font-bold text-xl mb-2 text-white">Security Patch</h5>
+<p class="text-zinc-400 text-sm mb-6 leading-relaxed">Review pending vulnerability reports for the core engine v4.2.</p>
+<span class="text-[10px] font-black uppercase text-white bg-white/10 px-3 py-1 rounded-full">3 Critical</span>
+</div>
+</div>
+<div class="bg-surface-container-highest p-8 rounded-xl flex flex-col justify-between group cursor-pointer hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-black mb-12 text-4xl">auto_awesome</span>
+<div>
+<h5 class="font-[&#39;Manrope&#39;] font-bold text-xl mb-2">Predictive Analysis</h5>
+<p class="text-zinc-500 text-sm mb-6 leading-relaxed">Forecasted project growth for Q2 2026 is trending at +15%.</p>
+<span class="text-[10px] font-black uppercase border-b-2 border-zinc-400 pb-1">View Model</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Floating Action Button - Supressed on dashboard as per rules? 
+         Actually rules say FAB only on Home/Dashboard if it aligns. 
+         Let's add a "New Report" FAB for quick actions. -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-black text-white rounded-full monolith-shadow flex items-center justify-center active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined text-2xl">add</span>
+</button>
+</body></html>

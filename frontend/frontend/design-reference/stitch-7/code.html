@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script type='text/javascript' nonce='hVrNX41sgY2Xhj2DE+wdPg==' src='https://contribution.usercontent.google.com/K4S6sjydx4dGn-NvRwy7ZQ30txt_ULWT0vW_YSk0LLvBmEZpnag8YnS8GMO8Gwm4bMPbj69cLnTpSx-GivTivHDGD97HIEKwlE4ggsdyaQEd_KAYK-nKAn9z9xjml_3G-vjMYebspDPHZx39Vuxd_sbRhoDuwa5-YQ8WxBtMNHFnHK7hdo0YyJzBHdT2JK99i7FQFhX56xQR2pU_viFUgVNzwVBTYS9zuLZruceE9_egIieTcEpIafDjbtDfdGldhebIOa0GegmQVtVv9k_E5p1seAqNaa4GV2DF6VrxbiQmDYdchyt3ur4lVav4RYyQ9h8F4A_IBlHFngB3XFFk61RRRwY0U7MxZ2Khhxnia3GpjEPkv4Jq22AZulacx91JGy-x3zpco9NpxGKUAwW5touTp6l1DEHoBWEqvAJOjHJBcICO-i35XZZuX9Fx__OKnr2B0_3Hc4AiEfpnSY-4fbxE4cQ15UcMGWVsDdTTCj9zFa4ZaLACCvmRTcftonTH_K7bxOqGzBpyfLIaEwq_GOOgHJ6my8EeeOgNj2tbkMjQqLh0lsi-ZYMLL24CxEzxKYxmg0MCtxPBWR0FGyZl0VPTy9uLtUgEJV9qIZkPN0eWyc5Lv712AlEoHbeH9MY-kaesOQtaV5D_ZXl_vV1rXjyakpV-omYhSbJ5k63pJkPbs7qWP2ST5V32lQy5mhYcYNmZUDmKdAD13D73NJo5aam5CVaudvIXoYMNDhccF3qCdBfAMeQeMp7ZrtxxtI2EOsl8mfMNJsfMwlW3Xm0tap9pwOK1trkol7N8'></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-variant": "#e2e2e2",
+              "surface": "#f9f9f9",
+              "surface-bright": "#f9f9f9",
+              "secondary-fixed": "#c7c6c6",
+              "on-tertiary-fixed": "#ffffff",
+              "on-error-container": "#410002",
+              "inverse-primary": "#c6c6c6",
+              "outline": "#777777",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#474747",
+              "surface-container-low": "#f3f3f3",
+              "primary": "#000000",
+              "on-primary-container": "#ffffff",
+              "tertiary": "#3b3b3b",
+              "error-container": "#ffdad6",
+              "tertiary-container": "#747474",
+              "background": "#f9f9f9",
+              "on-error": "#ffffff",
+              "secondary": "#5e5e5e",
+              "primary-container": "#3b3b3b",
+              "inverse-on-surface": "#f1f1f1",
+              "surface-dim": "#dadada",
+              "primary-fixed": "#5e5e5e",
+              "surface-container": "#eeeeee",
+              "outline-variant": "#c6c6c6",
+              "surface-container-high": "#e8e8e8",
+              "secondary-fixed-dim": "#acabab",
+              "inverse-surface": "#2f3131",
+              "on-secondary-fixed-variant": "#3b3b3b",
+              "on-secondary": "#ffffff",
+              "on-surface": "#1a1c1c",
+              "on-background": "#1a1c1c",
+              "error": "#ba1a1a",
+              "on-primary": "#e2e2e2",
+              "secondary-container": "#d5d4d4",
+              "surface-container-highest": "#e2e2e2",
+              "on-tertiary-fixed-variant": "#e2e2e2",
+              "on-surface-variant": "#474747",
+              "on-secondary-fixed": "#1b1c1c",
+              "on-secondary-container": "#1b1c1c",
+              "primary-fixed-dim": "#474747",
+              "on-tertiary-container": "#ffffff",
+              "tertiary-fixed": "#5e5e5e",
+              "on-tertiary": "#e2e2e2",
+              "on-primary-fixed": "#ffffff",
+              "surface-tint": "#5e5e5e",
+              "on-primary-fixed-variant": "#e2e2e2"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-nav {
+            background: rgba(249, 249, 249, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .monolith-shadow {
+            box-shadow: 0px 20px 40px rgba(26, 28, 28, 0.06);
+        }
+        .ghost-border {
+            border: 1px solid rgba(198, 198, 198, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#f9f9f9]/80 dark:bg-black/80 backdrop-blur-xl transition-all">
+<div class="flex justify-between items-center px-6 md:px-12 py-8 w-full mx-auto max-w-7xl">
+<div class="text-2xl font-black tracking-tighter text-black dark:text-white uppercase font-headline">
+                MONOLITH ARCHITECTURE
+            </div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-black dark:text-white font-black border-b-2 border-black dark:border-white pb-1 font-headline tracking-tight uppercase text-sm" href="#">Home</a>
+<a class="text-zinc-400 dark:text-zinc-600 font-medium hover:text-black dark:hover:text-white transition-colors font-headline tracking-tight uppercase text-sm" href="#">Portfolio</a>
+<a class="text-zinc-400 dark:text-zinc-600 font-medium hover:text-black dark:hover:text-white transition-colors font-headline tracking-tight uppercase text-sm" href="#">Skills</a>
+<a class="text-zinc-400 dark:text-zinc-600 font-medium hover:text-black dark:hover:text-white transition-colors font-headline tracking-tight uppercase text-sm" href="#">Profile</a>
+</div>
+<div class="flex items-center space-x-6">
+<div class="relative hidden lg:block">
+<input class="bg-surface-container-low border-none rounded-lg py-3 px-6 pr-12 w-64 focus:ring-0 focus:bg-surface-container-lowest transition-all font-label text-xs tracking-widest uppercase ghost-border" placeholder="SEARCH ARCHIVE..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+</div>
+<button class="material-symbols-outlined text-black dark:text-white hover:opacity-70 transition-opacity">menu</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 min-h-screen">
+<!-- Hero Search Section -->
+<section class="px-6 md:px-12 py-20 max-w-7xl mx-auto">
+<div class="max-w-4xl">
+<h1 class="font-headline text-6xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-none">
+                    CURATING <br/>THE FUTURE.
+                </h1>
+<p class="font-body text-lg text-on-surface-variant max-w-2xl mb-12 leading-relaxed">
+                    Explore a monolith of digital excellence. From pandemic data visualizations to complex cargo logistics, we synthesize raw information into architectural clarity.
+                </p>
+<div class="flex flex-col md:flex-row gap-4">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-lg font-headline font-bold text-sm tracking-widest uppercase hover:opacity-90 transition-all flex items-center justify-center gap-3">
+                        EXPLORE WORK <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-surface-container-highest text-primary px-10 py-5 rounded-lg font-headline font-bold text-sm tracking-widest uppercase hover:bg-surface-container-high transition-all">
+                        VIEW CV
+                    </button>
+</div>
+</div>
+</section>
+<!-- Browse by Topic: Asymmetric Bento Grid -->
+<section class="px-6 md:px-12 py-20 max-w-7xl mx-auto">
+<div class="mb-16">
+<span class="font-label text-xs tracking-[0.3em] uppercase text-outline block mb-4">CATEGORIES</span>
+<h2 class="font-headline text-4xl font-black tracking-tight uppercase">Browse by Topic</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Large Card: COVID-19 -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-low min-h-[500px] monolith-shadow border border-transparent hover:border-outline-variant transition-all cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:scale-105 transition-transform duration-700" data-alt="microscopic view of biological structures with cold blue lighting and clinical scientific aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpQM8c41bICxkuDAqs6GKYZmpYJBKgMLnLZG7jNifDmj89L4nsiE0AgH6bbi5SWL9-UXxljFOVGVjnsb3NMuWIMGkhigky6PcieOWks5-d2U12xAB_eSO6_klxBBJ9ahF3ahZ45OajmqykVLcMOMxoFW5gdN3wzwQaXEGboGS3fIaxS3tUXl9u9E7XBis_ht1x2b6f5S_Qz0UPaO3aVhbxuBaTzPnezmf3RoMVXNIfQRBv3hYLfqDPDr2T1v4vBN65tQphXO17UA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10">
+<span class="inline-block px-4 py-1 rounded-full bg-white/10 backdrop-blur-md text-white font-label text-[10px] tracking-widest uppercase mb-4">IMPACT ANALYSIS</span>
+<h3 class="font-headline text-5xl font-extrabold text-white tracking-tighter uppercase mb-4">COVID-19</h3>
+<p class="text-white/70 font-body max-w-md">Comprehensive data visualization of global pandemic trends and recovery architectures.</p>
+</div>
+</div>
+<!-- Tall Card: Australian Cargo -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-xl bg-surface-container-low min-h-[500px] monolith-shadow border border-transparent hover:border-outline-variant transition-all cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:scale-105 transition-transform duration-700" data-alt="rows of shipping containers at a harbor in twilight with dramatic orange and blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRCwhIafZVFH7x2TDfmAGxcAMvNx_Zd9WTrrDRLpbqbTNm_2Zmd0OgtDzhAhronHgQmYgXjTKj4035Vs45RrpMjsd36mdSj7LTCSsUkXX7GTGXnQy-nOgD0FLj3pb5G_o2Bygk6OD3kkVYtmkPPrlBdsTv4CNWmpCUQTqYP7PPsnHTlbZOE2kN8SJfm0GC9Zg-pDFZ4-I_8viClXofc9OzIiHx03StQFhMvPozgWeZ1cr91awTsTHaZrrBIXS8r5svpqJF8OWOGA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10">
+<span class="inline-block px-4 py-1 rounded-full bg-white/10 backdrop-blur-md text-white font-label text-[10px] tracking-widest uppercase mb-4">LOGISTICS</span>
+<h3 class="font-headline text-3xl font-extrabold text-white tracking-tighter uppercase mb-4">Australian Cargo</h3>
+<p class="text-white/70 font-body text-sm">Supply chain mapping and optimization for southern hemisphere trade routes.</p>
+</div>
+</div>
+<!-- Additional Topics as Tiles -->
+<div class="md:col-span-4 p-8 rounded-xl bg-surface-container-lowest monolith-shadow ghost-border group hover:bg-primary transition-colors cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center mb-6 group-hover:bg-white/20">
+<span class="material-symbols-outlined group-hover:text-white">public</span>
+</div>
+<h4 class="font-headline font-bold text-xl uppercase tracking-tight group-hover:text-white mb-2">Climate Dynamics</h4>
+<p class="text-on-surface-variant group-hover:text-white/70 text-sm">Environmental impact tracking and sustainability modeling.</p>
+</div>
+<div class="md:col-span-4 p-8 rounded-xl bg-surface-container-lowest monolith-shadow ghost-border group hover:bg-primary transition-colors cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center mb-6 group-hover:bg-white/20">
+<span class="material-symbols-outlined group-hover:text-white">account_balance</span>
+</div>
+<h4 class="font-headline font-bold text-xl uppercase tracking-tight group-hover:text-white mb-2">Urban Planning</h4>
+<p class="text-on-surface-variant group-hover:text-white/70 text-sm">Metropolitan growth patterns and architectural evolution.</p>
+</div>
+<div class="md:col-span-4 p-8 rounded-xl bg-surface-container-lowest monolith-shadow ghost-border group hover:bg-primary transition-colors cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center mb-6 group-hover:bg-white/20">
+<span class="material-symbols-outlined group-hover:text-white">monitoring</span>
+</div>
+<h4 class="font-headline font-bold text-xl uppercase tracking-tight group-hover:text-white mb-2">Market Flows</h4>
+<p class="text-on-surface-variant group-hover:text-white/70 text-sm">Real-time financial topography and economic signals.</p>
+</div>
+</div>
+</section>
+<!-- Browse by Skill: Horizontal Scroll / Icon Grid -->
+<section class="px-6 md:px-12 py-20 bg-surface-container-low mt-20">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+<div>
+<span class="font-label text-xs tracking-[0.3em] uppercase text-outline block mb-4">CAPABILITIES</span>
+<h2 class="font-headline text-4xl font-black tracking-tight uppercase">Browse by Skill</h2>
+</div>
+<a class="font-headline font-bold text-xs tracking-widest uppercase border-b border-black pb-1 hover:opacity-50 transition-opacity" href="#">VIEW ALL TECH STACK</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+<!-- Python -->
+<div class="bg-surface p-10 rounded-xl flex flex-col items-center justify-center group hover:bg-white transition-all monolith-shadow cursor-pointer">
+<div class="mb-6 relative">
+<span class="material-symbols-outlined text-4xl group-hover:scale-110 transition-transform">code</span>
+</div>
+<span class="font-headline font-bold text-sm tracking-widest uppercase">Python</span>
+</div>
+<!-- JavaScript -->
+<div class="bg-surface p-10 rounded-xl flex flex-col items-center justify-center group hover:bg-white transition-all monolith-shadow cursor-pointer">
+<div class="mb-6 relative">
+<span class="material-symbols-outlined text-4xl group-hover:scale-110 transition-transform">terminal</span>
+</div>
+<span class="font-headline font-bold text-sm tracking-widest uppercase">JavaScript</span>
+</div>
+<!-- React -->
+<div class="bg-surface p-10 rounded-xl flex flex-col items-center justify-center group hover:bg-white transition-all monolith-shadow cursor-pointer">
+<div class="mb-6 relative">
+<span class="material-symbols-outlined text-4xl group-hover:scale-110 transition-transform">animation</span>
+</div>
+<span class="font-headline font-bold text-sm tracking-widest uppercase">React</span>
+</div>
+<!-- TypeScript -->
+<div class="bg-surface p-10 rounded-xl flex flex-col items-center justify-center group hover:bg-white transition-all monolith-shadow cursor-pointer">
+<div class="mb-6 relative">
+<span class="material-symbols-outlined text-4xl group-hover:scale-110 transition-transform">verified</span>
+</div>
+<span class="font-headline font-bold text-sm tracking-widest uppercase">TypeScript</span>
+</div>
+<!-- Figma -->
+<div class="bg-surface p-10 rounded-xl flex flex-col items-center justify-center group hover:bg-white transition-all monolith-shadow cursor-pointer">
+<div class="mb-6 relative">
+<span class="material-symbols-outlined text-4xl group-hover:scale-110 transition-transform">draw</span>
+</div>
+<span class="font-headline font-bold text-sm tracking-widest uppercase">Figma</span>
+</div>
+<!-- GraphQL -->
+<div class="bg-surface p-10 rounded-xl flex flex-col items-center justify-center group hover:bg-white transition-all monolith-shadow cursor-pointer">
+<div class="mb-6 relative">
+<span class="material-symbols-outlined text-4xl group-hover:scale-110 transition-transform">hub</span>
+</div>
+<span class="font-headline font-bold text-sm tracking-widest uppercase">GraphQL</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Editorial CTA -->
+<section class="px-6 md:px-12 py-32 max-w-7xl mx-auto">
+<div class="bg-primary p-12 md:p-24 rounded-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/2 h-full hidden lg:block">
+<img class="w-full h-full object-cover opacity-20" data-alt="abstract architectural forms with hard shadows and sharp lines in a monochromatic palette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALURUYNklkjLmEo2V_V4bwgrBisAEi7fKuF6M6rxQMC0DOiupn7JB_5A2DFZKeqyVVKvF6r4sMqiK7jQK547f89eHrpj_qlgxsk-fgkfARE-gRIrOwShWeNkigXcJQw_uPA7Ishk7EMwiIt9VZaWmsIcCINnch30GpHGi9l4NrL5_dt8Ssv7UetMJXcAE40U4VdxNc7Fi7MY13ONBZZgbjp_eH_HUqi1aV5e2Ktndigckg16s2mCYQK74eJLAZo99WssT90b4QEA"/>
+</div>
+<div class="relative z-10 max-w-xl">
+<h2 class="font-headline text-white text-5xl font-black tracking-tighter uppercase mb-6 leading-none">JOIN THE ARCHIVE.</h2>
+<p class="text-white/60 font-body mb-10 leading-relaxed">Stay updated with our latest case studies, architectural deep-dives, and technical explorations. No noise, just curation.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<input class="flex-1 bg-white/10 border-none rounded-lg px-6 py-4 text-white placeholder:text-white/30 focus:ring-2 focus:ring-white/20 font-label text-xs tracking-widest uppercase" placeholder="EMAIL ADDRESS" type="email"/>
+<button class="bg-white text-primary px-8 py-4 rounded-lg font-headline font-black text-xs tracking-[0.2em] uppercase hover:bg-on-primary transition-colors">SUBSCRIBE</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-20 bg-[#f3f3f3] dark:bg-zinc-900 transition-colors">
+<div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 py-16 w-full max-w-7xl mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="text-lg font-bold text-black dark:text-white uppercase font-headline tracking-tighter mb-4">
+                    MONOLITH ARCHITECTURE
+                </div>
+<p class="font-[&#39;Inter&#39;] text-[10px] tracking-widest uppercase text-zinc-500 dark:text-zinc-400">
+                    © 2024 THE CURATED MONOLITH. ALL RIGHTS RESERVED.
+                </p>
+</div>
+<div class="flex space-x-8">
+<a class="font-[&#39;Inter&#39;] text-[10px] tracking-widest uppercase text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors" href="#">Journal</a>
+<a class="font-[&#39;Inter&#39;] text-[10px] tracking-widest uppercase text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors" href="#">Contact</a>
+<a class="font-[&#39;Inter&#39;] text-[10px] tracking-widest uppercase text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors" href="#">Terms</a>
+<a class="font-[&#39;Inter&#39;] text-[10px] tracking-widest uppercase text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors" href="#">Privacy</a>
+</div>
+<div class="mt-8 md:mt-0 flex gap-4">
+<div class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-zinc-500 hover:border-primary hover:text-primary transition-all cursor-pointer">
+<span class="material-symbols-outlined text-lg">share</span>
+</div>
+<div class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-zinc-500 hover:border-primary hover:text-primary transition-all cursor-pointer">
+<span class="material-symbols-outlined text-lg">rss_feed</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

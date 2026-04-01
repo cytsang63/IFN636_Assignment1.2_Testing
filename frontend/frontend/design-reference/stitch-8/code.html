@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MONOLITH_DEV | Project Management</title>
+<script type='text/javascript' nonce='yxXiiqUm5X2srPnqEdAv/A==' src='https://contribution.usercontent.google.com/ayTyZisrl0mXIdv_QK98IDu5lKQfLUopbjFRLCX8rUCLQGhuJ24yvaSB1xKQGpDonbxSuaKEtpCUfaM_9FSHK4buLL1Yjt7mYKknZJLMbVfu-OsJzgsPCF5g2R77Ikw98ysPqBsfX5e_hYAQn_zhISaLnJLPTshKfZvcIBnM6Jptgf2xcnnXoF_htNRq3UORKTkMq7FdFawv9JlLJiG-kOLjZS2cR9_40FkjLFJR1bmmZPi9OWDsNe4DtsMbQN6w4nTsTr0ZsqWd_puNrdthEUitf0NedYUjcYs0EKgknZ6nlJqGMWDFmU4RRyyg-NJlwf-KgBDb9Eo2sHNVADbES3SnWUsapkSQXsNJHlYpk4EUQYDW4BIh7ygGaQbPBlgk-FDQsGA5hZYyq8C6LHbcjH_iLJ_TaUvC741or3iHSPZLcfYEyKgOfZRWk-rvjfSjjY-ERazCw_as0foWRlRYtAig8Gq9DqmKvFEreodUHFLo8kN6iwWj5Nz1QJefXgSlQMbvEcoUQVonGl1eK0dWr3qFBscK2_w84vaFypPA8mr6zB7Q0MPnTePH9SCnnrmNGPjLKJ17mQ4tyEpb6dko8hLNXKITnD4145Z7HLDHaHBlE_hqhdUjc0BIDUs9hyJ3tqCytavUHJOLDKOis1Ekd8uio4xbZ7VmJLUoQAeWJ1mPklhzivhK9ezY7NrlVlFqDO2T9IsIAqYw8f_W1ymaZ52GLCyRrmCbOnNkTydc25VmSKpGeA_akqYqh7aQIZSSSKERiJROSilH0hsN6Y2G1fk4bdssF8xOPz1-'></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Inter:wght@300;400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-background": "#1a1c1c",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#e2e2e2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#410002",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-bright": "#f9f9f9",
+                        "inverse-surface": "#2f3131",
+                        "primary-fixed-dim": "#474747",
+                        "primary": "#000000",
+                        "outline-variant": "#c6c6c6",
+                        "surface-dim": "#dadada",
+                        "outline": "#777777",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#5e5e5e",
+                        "on-surface-variant": "#474747",
+                        "on-primary-container": "#ffffff",
+                        "on-tertiary-fixed-variant": "#e2e2e2",
+                        "secondary-fixed-dim": "#acabab",
+                        "on-secondary-fixed-variant": "#3b3b3b",
+                        "secondary": "#5e5e5e",
+                        "tertiary": "#3b3b3b",
+                        "surface-container-low": "#f3f3f3",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-container": "#ffffff",
+                        "background": "#f9f9f9",
+                        "on-tertiary-fixed": "#ffffff",
+                        "tertiary-fixed": "#5e5e5e",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary-container": "#747474",
+                        "secondary-fixed": "#c7c6c6",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#5e5e5e",
+                        "secondary-container": "#d5d4d4",
+                        "surface-container": "#eeeeee",
+                        "tertiary-fixed-dim": "#474747",
+                        "on-tertiary": "#e2e2e2",
+                        "on-secondary-container": "#1b1c1c",
+                        "on-primary-fixed": "#ffffff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "surface-variant": "#e2e2e2",
+                        "primary-container": "#3b3b3b",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1a1c1c",
+                        "on-primary": "#e2e2e2"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+            font-family: 'Inter', sans-serif;
+        }
+        .monolith-header {
+            font-family: 'Manrope', sans-serif;
+            letter-spacing: -0.04em;
+        }
+        .glass-nav {
+            background: rgba(249, 249, 249, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 h-24 w-full max-w-none glass-nav">
+<div class="text-2xl font-black tracking-tighter text-black monolith-header">MONOLITH_DEV</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-[&#39;Inter&#39;] text-sm tracking-wide text-[#474747] hover:text-black transition-colors" href="#">Home</a>
+<a class="font-[&#39;Inter&#39;] text-sm tracking-wide text-black border-b-2 border-black pb-1" href="#">Portfolio</a>
+<a class="font-[&#39;Inter&#39;] text-sm tracking-wide text-[#474747] hover:text-black transition-colors" href="#">Skills</a>
+<a class="font-[&#39;Inter&#39;] text-sm tracking-wide text-[#474747] hover:text-black transition-colors" href="#">Profile</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-bold text-sm hover:opacity-90 active:scale-95 duration-200 transition-all">
+                Create New Project
+            </button>
+</div>
+</nav>
+<!-- SideNavBar (Suppressed on this specific project dashboard as per Shell Visibility rules, prioritized canvas) -->
+<main class="pt-32 pb-20 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- Page Header Area -->
+<header class="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<span class="text-xs font-bold uppercase tracking-[0.3em] text-outline mb-4 block">Curation Mode</span>
+<h1 class="text-6xl md:text-8xl monolith-header font-extrabold text-primary">Your project</h1>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 bg-surface-container-highest text-on-surface px-6 py-3 rounded-lg font-semibold hover:bg-surface-container-high transition-colors active:opacity-80">
+<span class="material-symbols-outlined" style="font-size: 20px;">settings</span>
+                    Settings
+                </button>
+</div>
+</header>
+<!-- Project Grid (Asymmetric Editorial Layout) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
+<!-- Project Card 1 -->
+<article class="group relative">
+<div class="aspect-[16/10] overflow-hidden rounded-lg bg-surface-container-low mb-12">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="Modern minimalist data visualization dashboard with clean lines and monochromatic UI elements on a dark screen background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi9waJlMB5pmoN-qvtWa2lZVyaFNbCr5oM1qQoRFDAlnQkGhvMgB4gGotLyVobYGqNCGEiDyPekT7CEHFs0lYiBT5z99G21Wjfdtgse_H7GWJcKT728rfCKF-G9nEn3LL18Qf7KE8dvzKnoAgZ8Y7iJjgel1pn0p9DKbZ_v74quBa5ZiZbpp13Q6LDMoRi6QCLyJXZqfJb6cS52aGL3DhYBO0RVECJbQZX_mBGGjV1JoO-rvObx9iMlIXuyO7c_cfjXdSaBGAzLw"/>
+</div>
+<div class="relative -mt-20 ml-6 mr-6 p-8 bg-surface-container-lowest rounded-lg shadow-[0px_20px_40px_rgba(26,28,28,0.06)]">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-[10px] font-black uppercase tracking-[0.2em] text-outline-variant mb-1 block">COVID-19</span>
+<h2 class="text-3xl font-bold monolith-header text-primary mb-2">Project Summary</h2>
+</div>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:scale-90" title="Edit"><span class="material-symbols-outlined text-outline">edit</span></button>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:scale-90" title="Share"><span class="material-symbols-outlined text-outline">share</span></button>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:scale-90 text-error" title="Delete"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+<p class="text-on-surface-variant font-body leading-relaxed mb-6 text-sm">
+                        Comprehensive tracking and predictive analysis of global pandemic trends, focusing on high-density urban mobility patterns and vaccine distribution efficacy.
+                    </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full text-[10px] font-bold uppercase tracking-wider">COVID-19</span>
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full text-[10px] font-bold uppercase tracking-wider">Python</span>
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full text-[10px] font-bold uppercase tracking-wider">Australia</span>
+</div>
+</div>
+</article>
+<!-- Project Card 2 -->
+<article class="group relative md:mt-32">
+<div class="aspect-[16/10] overflow-hidden rounded-lg bg-surface-container-low mb-12">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="Aerial view of a sustainable smart city layout with integrated green spaces and renewable energy infrastructure in architectural style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRa_wvaSUyxo9T0Bd3EFd0a9ZRnQLdDcNIUxG0qT6tUaBGTqcDvHp4wc6j_vs-f1A3dsFSMDeElPtk4YUrOfbYb_0GXf8I1edN1wez3bpltg2HqQE7QlmQZww2G2VkTpfCnyCo26fobhdCo5tpfIiBXT9CayqRLFykpqc7EhBP_icSA3h3y4892AXsGWCuMRHvg4a0luOsT6GlQ9kGYr5_-idlEKMioU0dF4GUrYyy71nn3EyyvoujJsx3VTm8pLknzQ7HMosR5w"/>
+</div>
+<div class="relative -mt-20 ml-6 mr-6 p-8 bg-surface-container-lowest rounded-lg shadow-[0px_20px_40px_rgba(26,28,28,0.06)]">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-[10px] font-black uppercase tracking-[0.2em] text-outline-variant mb-1 block">Infrastructure</span>
+<h2 class="text-3xl font-bold monolith-header text-primary mb-2">Urban Genesis</h2>
+</div>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:scale-90" title="Edit"><span class="material-symbols-outlined text-outline">edit</span></button>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:scale-90" title="Share"><span class="material-symbols-outlined text-outline">share</span></button>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:scale-90 text-error" title="Delete"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+<p class="text-on-surface-variant font-body leading-relaxed mb-6 text-sm">
+                        A digital twin simulation for sustainable city planning, leveraging IoT sensor data to optimize energy consumption and waste management protocols.
+                    </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full text-[10px] font-bold uppercase tracking-wider">SmartCity</span>
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full text-[10px] font-bold uppercase tracking-wider">Rust</span>
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full text-[10px] font-bold uppercase tracking-wider">IoT</span>
+</div>
+</div>
+</article>
+<!-- Project Card 3 -->
+<article class="group relative">
+<div class="aspect-[16/10] overflow-hidden rounded-lg bg-surface-container-low mb-12">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="Abstract neural network visualization with interconnected glowing nodes and flowing lines on a textured off-white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4RPOE5DoDKXeo3Fc0hSOL7yOQn4JDMxUwoaexep3XHYH1dD-WcAAYWV5gVW8MZtbBgewAK008LHHelmrksE0hcbFl1U8ts1K8aPDOsWV_o0YQHjf9lcOOEac85YvIrIScJGSMWXBvdvpvsE83RrJnvfpivMEcB0_RKGU0UKQkQDORu1ykcVrcqGrA-GVqAL5uZQrVBFgQdtTw3IsjmoGJ8SZ9MXN7SksTAcoELoypK3Lx4xXEgn2aOsAUNMJaasEcRaHoRPoUWQ"/>
+</div>
+<div class="relative -mt-20 ml-6 mr-6 p-8 bg-surface-container-lowest rounded-lg shadow-[0px_20px_40px_rgba(26,28,28,0.06)]">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-[10px] font-black uppercase tracking-[0.2em] text-outline-variant mb-1 block">Machine Learning</span>
+<h2 class="text-3xl font-bold monolith-header text-primary mb-2">Neural Nexus</h2>
+</div>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:scale-90" title="Edit"><span class="material-symbols-outlined text-outline">edit</span></button>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:scale-90" title="Share"><span class="material-symbols-outlined text-outline">share</span></button>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:scale-90 text-error" title="Delete"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+<p class="text-on-surface-variant font-body leading-relaxed mb-6 text-sm">
+                        High-performance inference engine designed for edge computing, optimizing transformer models for mobile hardware without sacrificing accuracy.
+                    </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full text-[10px] font-bold uppercase tracking-wider">AI</span>
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full text-[10px] font-bold uppercase tracking-wider">C++</span>
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full text-[10px] font-bold uppercase tracking-wider">Global</span>
+</div>
+</div>
+</article>
+<!-- Project Card 4 -->
+<article class="group relative md:mt-32">
+<div class="aspect-[16/10] overflow-hidden rounded-lg bg-surface-container-low mb-12">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="Close-up of high-end mechanical components and gears with a sophisticated brushed metal finish and soft ambient studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHfJNnFN7xiCDGlU-napk-_zz8FdtAMxEKNoK09wGwanYGs0DX9gdLGYToBBG82OhkTdeX6q200G6-N9zhyCgrsQuioXZSqOnYIM7M2mSVR67fxgY4Owpq7taNsGHIGBzYgErlEHuVNi2F9BL7rRoGfkdgcYt58vMRqa_cTJN45olMvKi_xzH1M3XsvtenRBgs_URGfHF5E86ckPLOPwEveXhUFoEknU3fcp_NuhpZ5MMjfSnPgFZ5iLh2ctPjmRYDeCodUxaMTQ"/>
+</div>
+<div class="relative -mt-20 ml-6 mr-6 p-8 bg-surface-container-lowest rounded-lg shadow-[0px_20px_40px_rgba(26,28,28,0.06)]">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-[10px] font-black uppercase tracking-[0.2em] text-outline-variant mb-1 block">Fintech</span>
+<h2 class="text-3xl font-bold monolith-header text-primary mb-2">Ledger Prime</h2>
+</div>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:scale-90" title="Edit"><span class="material-symbols-outlined text-outline">edit</span></button>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:scale-90" title="Share"><span class="material-symbols-outlined text-outline">share</span></button>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:scale-90 text-error" title="Delete"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+<p class="text-on-surface-variant font-body leading-relaxed mb-6 text-sm">
+                        Decentralized finance protocol focusing on automated liquidity provision and multi-chain asset management with zero-knowledge proof security.
+                    </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full text-[10px] font-bold uppercase tracking-wider">Blockchain</span>
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full text-[10px] font-bold uppercase tracking-wider">Go</span>
+<span class="px-4 py-1.5 bg-surface-container-high text-on-surface-variant rounded-full text-[10px] font-bold uppercase tracking-wider">Fintech</span>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 border-t border-[#c6c6c6]/15 bg-[#f9f9f9] dark:bg-black">
+<div class="flex flex-col items-center justify-center gap-6 w-full px-6 text-center">
+<p class="font-[&#39;Inter&#39;] text-[10px] uppercase tracking-[0.2em] text-[#474747] dark:text-[#a3a3a3]">© 2024 THE CURATED MONOLITH. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-10">
+<a class="font-[&#39;Inter&#39;] text-[10px] uppercase tracking-[0.2em] text-[#474747] hover:text-black transition-colors" href="#">Privacy</a>
+<a class="font-[&#39;Inter&#39;] text-[10px] uppercase tracking-[0.2em] text-[#474747] hover:text-black transition-colors" href="#">Terms</a>
+<a class="font-[&#39;Inter&#39;] text-[10px] uppercase tracking-[0.2em] text-[#474747] hover:text-black transition-colors" href="#">API</a>
+</div>
+</div>
+</footer>
+</body></html>
