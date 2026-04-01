@@ -52,6 +52,23 @@ const getProfile = async (req, res) => {
     }
   };
 
+const getDashboardStats = async (req, res) => {
+  try {
+    const PortfolioProject = require('../models/PortfolioProject');
+    const myProjectCount = await PortfolioProject.countDocuments({ user: req.user._id });
+    const totalProjects = await PortfolioProject.countDocuments();
+    const totalUsers = await User.countDocuments();
+
+    res.status(200).json({
+      myProjectCount,
+      totalProjects,
+      totalUsers,
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 const updateUserProfile = async (req, res) => {
     try {
         const user = await User.findById(req.user.id);
@@ -70,4 +87,4 @@ const updateUserProfile = async (req, res) => {
     }
 };
 
-module.exports = { registerUser, loginUser, updateUserProfile, getProfile };
+module.exports = { registerUser, loginUser, updateUserProfile, getProfile, getDashboardStats };

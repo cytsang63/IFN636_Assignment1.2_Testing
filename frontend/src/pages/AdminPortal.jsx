@@ -1,5 +1,6 @@
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import StitchHeader from '../components/StitchHeader';
 
 const SidebarItem = ({ icon, label, active }) => {
   const base =
@@ -25,13 +26,15 @@ const AdminPortal = () => {
 
   const handleLogout = () => {
     logout();
-    navigate('/login');
+    navigate('/', { replace: true });
   };
 
   return (
     <div className="bg-surface min-h-screen text-on-surface font-body">
-      {/* SideNavBar */}
-      <aside className="h-screen w-64 fixed left-0 top-0 z-50 flex flex-col py-8 border-r border-[#e2e2e2] bg-background">
+      <StitchHeader activeNav="admin" authHighlight="none" />
+
+      {/* SideNavBar — fixed below global nav (approx. StitchHeader height) */}
+      <aside className="fixed left-0 top-[118px] z-40 flex h-[calc(100vh-118px)] w-64 flex-col overflow-y-auto border-r border-[#e2e2e2] bg-background py-8">
         <div className="px-8 mb-12">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-primary flex items-center justify-center rounded-lg">
@@ -90,7 +93,7 @@ const AdminPortal = () => {
       {/* Main Content */}
       <main className="ml-64 min-h-screen">
         {/* TopAppBar */}
-        <header className="w-full sticky top-0 z-40 bg-white/80 backdrop-blur-xl shadow-ambient flex items-center justify-between px-12 h-16">
+        <header className="sticky top-0 z-30 flex h-16 w-full items-center justify-between bg-white/80 px-12 shadow-ambient backdrop-blur-xl">
           <div className="flex items-center gap-8">
             <h2 className="font-Manrope font-black tracking-tighter text-xl text-black">Admin Portal</h2>
 
@@ -99,7 +102,7 @@ const AdminPortal = () => {
                 search
               </span>
               <input
-                className="bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-1.5 text-sm focus:ring-2 focus:ring-black focus:bg-white transition-all w-64"
+                className="w-64 rounded-lg border-none bg-surface-container-low py-1.5 pl-10 pr-4 text-sm transition-all focus:bg-white focus:ring-2 focus:ring-black"
                 placeholder="Search data..."
                 type="text"
               />
@@ -107,10 +110,17 @@ const AdminPortal = () => {
           </div>
 
           <div className="flex items-center gap-6">
-            <button type="button" className="text-zinc-500 hover:text-black transition-colors active:scale-95">
+            <button
+              type="button"
+              onClick={handleLogout}
+              className="rounded-lg border border-[#e2e2e2] px-4 py-2 font-[Inter] text-sm font-semibold text-black transition-colors hover:bg-zinc-50"
+            >
+              Logout
+            </button>
+            <button type="button" className="text-zinc-500 transition-colors hover:text-black active:scale-95">
               <span className="material-symbols-outlined">notifications</span>
             </button>
-            <button type="button" className="text-zinc-500 hover:text-black transition-colors active:scale-95">
+            <button type="button" className="text-zinc-500 transition-colors hover:text-black active:scale-95">
               <span className="material-symbols-outlined">settings</span>
             </button>
 
@@ -120,7 +130,7 @@ const AdminPortal = () => {
                 <p className="text-[10px] text-zinc-500">Super Admin</p>
               </div>
               <img
-                className="w-8 h-8 rounded-full object-cover"
+                className="h-8 w-8 rounded-full object-cover"
                 alt="Admin user avatar"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBKXrTlbyvudOTnV0xuWZGRkiFhb2LihFdHDiTj07BBeETpkuoCtVylTIQ-DTLZHP7FTbitQ3hUy9xHTsITrzj4diSNIeRbVCKyQvg8zojyePpdywMppR2IT3etx_UjMX3w1b5VpV3G4xQlNnvpmRB_CxpRCK1xdFH9y30wUdzzvCsdL3CRhBaLUX-1oGSk6vvr-2wEiAJvu8CZUQGM0In0vPjT5EXOjh-7iM4qEnwf7d0pL_j_gBRfkH9gCgcFcwpbJqTmwyaug"
               />
@@ -128,7 +138,7 @@ const AdminPortal = () => {
           </div>
         </header>
 
-        <div className="p-12 space-y-12 max-w-7xl mx-auto">
+        <div className="mx-auto max-w-7xl space-y-12 p-12">
           {/* Hero / Stats */}
           <section className="grid grid-cols-12 gap-8">
             <div className="col-span-12">

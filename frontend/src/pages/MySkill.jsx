@@ -1,117 +1,139 @@
-import { Link } from 'react-router-dom';
-import MonolithNav from '../components/MonolithNav';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import axiosInstance from '../axiosConfig';
+import { useAuth } from '../context/AuthContext';
+import StitchHeader from '../components/StitchHeader';
 
-const SKILLS = [
-  { name: 'Python', icon: 'code', level: 'Advanced', focus: 'Data analysis, automation, APIs' },
-  { name: 'JavaScript', icon: 'terminal', level: 'Advanced', focus: 'UI architecture, async patterns' },
-  { name: 'React', icon: 'animation', level: 'Advanced', focus: 'Component systems, routing, state' },
-  { name: 'Node.js', icon: 'hub', level: 'Intermediate', focus: 'REST services, auth, tooling' },
-  { name: 'TypeScript', icon: 'verified', level: 'Intermediate', focus: 'Types, refactors, DX' },
-  { name: 'Figma', icon: 'draw', level: 'Intermediate', focus: 'Prototyping, UI systems' },
+const SAMPLE_PROJECTS = [
+  {
+    _id: 'sample-covid-19',
+    title: 'COVID-19',
+    topic: 'Topic',
+    summary:
+      'This project describe the health status during COVID-19. Data is used from 2019 to 2024. Python is applied for data collection, data cleansing and visualization.',
+    tags: ['COVID-19', 'Python', 'Australia'],
+    imageUrl:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDpQM8c41bICxkuDAqs6GKYZmpYJBKgMLnLZG7jNifDmj89L4nsiE0AgH6bbi5SWL9-UXxljFOVGVjnsb3NMuWIMGkhigky6PcieOWks5-d2U12xAB_eSO6_klxBBJ9ahF3ahZ45OajmqykVLcMOMxoFW5gdN3wzwQaXEGboGS3fIaxS3tUXl9u9E7XBis_ht1x2b6f5S_Qz0UPaO3aVhbxuBaTzPnezmf3RoMVXNIfQRBv3hYLfqDPDr2T1v4vBN65tQphXO17UA',
+    userName: 'qut_001',
+  },
+  {
+    _id: 'sample-australian-cargo',
+    title: 'Australian cargo',
+    topic: 'Topic',
+    summary:
+      'This project describe the number of the cargo in Australia. Past 10 years data is used for trend analysis, forecasting, and logistics planning.',
+    tags: ['Cargo', 'Logistics', 'Australia'],
+    imageUrl:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDRCwhIafZVFH7x2TDfmAGxcAMvNx_Zd9WTrrDRLpbqbTNm_2Zmd0OgtDzhAhronHgQmYgXjTKj4035Vs45RrpMjsd36mdSj7LTCSsUkXX7GTGXnQy-nOgD0FLj3pb5G_o2Bygk6OD3kkVYtmkPPrlBdsTv4CNWmpCUQTqYP7PPsnHTlbZOE2kN8SJfm0GC9Zg-pDFZ4-I_8viClXofc9OzIiHx03StQFhMvPozgWeZ1cr91awTsTHaZrrBIXS8r5svpqJF8OWOGA',
+    userName: 'australia001',
+  },
 ];
 
 const MySkill = () => {
+  const { user } = useAuth();
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const loadPublicProjects = useCallback(async () => {
+    setLoading(true);
+    try {
+      const headers = user?.token ? { Authorization: `Bearer ${user.token}` } : undefined;
+      const response = await axiosInstance.get('/api/portfolio/public', { headers });
+      setItems(Array.isArray(response.data) ? response.data : []);
+    } catch (error) {
+      console.error(error);
+      alert(error.response?.data?.message || 'Could not load public portfolios.');
+    } finally {
+      setLoading(false);
+    }
+  }, [user]);
+
+  useEffect(() => {
+    loadPublicProjects();
+  }, [loadPublicProjects]);
+
+  const filteredItems = useMemo(() => {
+    const source = items.length > 0 ? items : SAMPLE_PROJECTS;
+    const q = searchQuery.trim().toLowerCase();
+    if (!q) return source;
+    return source.filter((item) => {
+      const text = [item.title, item.topic, item.summary, item.userName, ...(item.tags || [])]
+        .join(' ')
+        .toLowerCase();
+      return text.includes(q);
+    });
+  }, [items, searchQuery]);
+
   return (
-    <div className="min-h-screen bg-surface font-body text-on-surface antialiased selection:bg-black selection:text-white">
-      <MonolithNav />
+    <div className="min-h-screen bg-white text-zinc-900 font-body antialiased">
+      <StitchHeader
+        activeNav="skill"
+        authHighlight="none"
+        showFilterSort
+        searchValue={searchQuery}
+        onSearchChange={setSearchQuery}
+      />
 
-      <main className="pt-32 pb-24 px-8 md:px-12 max-w-[1920px] mx-auto">
-        <header className="mb-20 flex flex-col md:flex-row justify-between items-end gap-8">
-          <div className="max-w-3xl">
-            <p className="font-body text-xs font-bold tracking-[0.2em] uppercase text-neutral-400 mb-4">Capabilities / Profile</p>
-            <h1 className="text-6xl sm:text-7xl font-black tracking-tighter leading-none text-black font-headline">My skill</h1>
-          </div>
-          <div className="flex items-center gap-4">
-            <Link
-              to="/developer-profile"
-              className="bg-primary text-on-primary px-8 py-4 rounded-xl font-headline font-bold flex items-center gap-3 hover:opacity-90 transition-all active:scale-95"
-            >
-              <span className="material-symbols-outlined text-sm">edit</span>
-              Edit in Profile
-            </Link>
-            <button type="button" className="p-4 bg-surface-container-low text-primary rounded-xl hover:bg-surface-container-high transition-colors active:scale-95">
-              <span className="material-symbols-outlined">tune</span>
-            </button>
-          </div>
-        </header>
+      <main className="max-w-4xl mx-auto px-4 md:px-8 py-8">
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-black mb-10">
+          Get the portfolio you
+          <br />
+          are interested with
+        </h1>
 
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {SKILLS.map((s) => (
-            <article key={s.name} className="bg-surface-container-lowest rounded-2xl p-10 shadow-ambient">
-              <div className="flex items-start justify-between gap-6 mb-8">
-                <div>
-                  <p className="font-label text-[10px] font-bold tracking-[0.25em] uppercase text-neutral-400 mb-2">Core skill</p>
-                  <h2 className="font-headline text-3xl font-black tracking-tight text-black">{s.name}</h2>
+        {loading && <p className="text-sm text-zinc-500 mb-6">Loading portfolios...</p>}
+        {!loading && filteredItems.length === 0 && (
+          <p className="text-sm text-zinc-500 mb-6">No portfolios found for your search.</p>
+        )}
+        {!loading && items.length === 0 && (
+          <p className="text-xs text-zinc-400 mb-6">Showing sample projects for demo.</p>
+        )}
+
+        <div className="space-y-12">
+          {filteredItems.map((item) => (
+            <article key={item._id} className="border-b border-zinc-100 pb-10">
+              <div className="flex gap-4 items-start">
+                <div className="w-36 h-32 rounded overflow-hidden bg-zinc-100 shrink-0 flex items-center justify-center">
+                  {item.imageUrl ? (
+                    <img src={item.imageUrl} alt={item.title || 'Portfolio'} className="w-full h-full object-cover" />
+                  ) : (
+                    <span className="material-symbols-outlined text-zinc-300 text-5xl">image</span>
+                  )}
                 </div>
-                <div className="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center">
-                  <span className="material-symbols-outlined text-black">{s.icon}</span>
+                <div className="flex-1 flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-zinc-400 text-sm">Topic</p>
+                    <h2 className="text-3xl font-medium leading-tight">{item.title || item.topic || 'Untitled'}</h2>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-zinc-400 text-sm">User name</p>
+                    <p className="text-2xl font-normal">{item.userName}</p>
+                  </div>
                 </div>
               </div>
 
-              <p className="text-on-surface-variant leading-relaxed mb-8">{s.focus}</p>
+              <h3 className="text-4xl font-semibold mt-8 mb-3">Project Summary</h3>
+              <p className="text-xl text-zinc-600 leading-relaxed max-w-3xl">
+                {item.summary || 'No project summary provided.'}
+              </p>
 
-              <div className="flex items-center justify-between">
-                <span className="inline-flex items-center px-4 py-2 rounded-full bg-surface-container-high text-on-surface-variant text-[10px] font-bold uppercase tracking-widest">
-                  {s.level}
-                </span>
-                <Link className="font-headline font-bold text-xs tracking-widest uppercase border-b-2 border-black pb-1 hover:opacity-60 transition-opacity" to="/portfolio/explore">
-                  See work
-                </Link>
+              <div className="mt-4">
+                <h4 className="text-4xl font-semibold mb-2">Tag</h4>
+                <div className="flex flex-wrap gap-3">
+                  {(item.tags || []).length === 0 && (
+                    <span className="rounded-full border border-zinc-200 px-4 py-1 text-sm text-zinc-400">No tags</span>
+                  )}
+                  {(item.tags || []).map((tag) => (
+                    <span key={tag} className="rounded-full border border-zinc-200 px-4 py-1 text-sm text-zinc-700">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </article>
           ))}
-        </section>
-
-        <section className="mt-24 bg-surface-container-low rounded-2xl p-10 md:p-14">
-          <div className="flex flex-col md:flex-row justify-between items-start gap-10">
-            <div className="max-w-2xl">
-              <h3 className="font-headline text-4xl font-black tracking-tighter mb-4">Curated stack</h3>
-              <p className="text-on-surface-variant leading-relaxed">
-                This is a read-only showcase of your capabilities. Update your skills from the developer profile page, and your portfolio work will remain the proof.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {['MERN', 'REST', 'JWT', 'MongoDB', 'Tailwind', 'CI/CD'].map((chip) => (
-                <span
-                  key={chip}
-                  className="px-5 py-3 rounded-full bg-surface-container-high text-on-surface-variant text-[10px] font-bold uppercase tracking-[0.2em]"
-                >
-                  {chip}
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer className="bg-neutral-50 w-full py-16 px-8 md:px-12 mt-20">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-12 w-full max-w-[1920px] mx-auto">
-          <div className="flex flex-col gap-6">
-            <div className="font-headline font-black text-lg text-black">MONOLITH</div>
-            <p className="font-body text-xs font-medium tracking-widest uppercase text-neutral-400">© 2024 MONOLITH. THE CURATED MONOLITH.</p>
-          </div>
-          <div className="flex gap-16">
-            <div className="flex flex-col gap-4">
-              <h5 className="font-body text-xs font-bold tracking-widest uppercase text-black mb-2">Platform</h5>
-              <Link className="font-body text-xs font-medium tracking-widest uppercase text-neutral-400 hover:text-black transition-colors" to="#">
-                Journal
-              </Link>
-              <Link className="font-body text-xs font-medium tracking-widest uppercase text-neutral-400 hover:text-black transition-colors" to="#">
-                Archive
-              </Link>
-            </div>
-            <div className="flex flex-col gap-4">
-              <h5 className="font-body text-xs font-bold tracking-widest uppercase text-black mb-2">Legal</h5>
-              <Link className="font-body text-xs font-medium tracking-widest uppercase text-neutral-400 hover:text-black transition-colors" to="#">
-                Privacy
-              </Link>
-              <Link className="font-body text-xs font-medium tracking-widest uppercase text-neutral-400 hover:text-black transition-colors" to="#">
-                Contact
-              </Link>
-            </div>
-          </div>
         </div>
-      </footer>
+      </main>
     </div>
   );
 };

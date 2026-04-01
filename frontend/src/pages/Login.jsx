@@ -1,15 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { useNavigate, useLocation, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axiosInstance from '../axiosConfig';
+import StitchHeader from '../components/StitchHeader';
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [loading, setLoading] = useState(false);
-  const { login } = useAuth();
+  const { user, login } = useAuth();
   const navigate = useNavigate();
-  const location = useLocation();
-  const redirectPath = location.state?.from?.pathname || '/tasks';
+
+  useEffect(() => {
+    if (user) {
+      navigate('/', { replace: true });
+    }
+  }, [user, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +26,7 @@ const Login = () => {
     try {
       const response = await axiosInstance.post('/api/auth/login', formData);
       login(response.data);
-      navigate(redirectPath, { replace: true });
+      navigate('/', { replace: true });
     } catch (error) {
       alert(error.response?.data?.message || 'Login failed. Please try again.');
     } finally {
@@ -30,126 +35,75 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background font-body text-on-surface antialiased flex flex-col">
-      <div className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-[0_20px_40px_rgba(26,28,28,0.06)]">
-        <div className="flex justify-between items-center px-8 py-4 max-w-[1440px] mx-auto">
-          <div className="text-2xl font-black tracking-tighter text-black uppercase font-headline">MONOLITH</div>
-          <div className="hidden md:flex items-center gap-8">
-            <Link className="font-headline font-bold tracking-tight text-neutral-500 hover:text-black transition" to="#">Portfolio</Link>
-            <Link className="font-headline font-bold tracking-tight text-neutral-500 hover:text-black transition" to="#">Services</Link>
-            <Link className="font-headline font-bold tracking-tight text-neutral-500 hover:text-black transition" to="#">About</Link>
-          </div>
-          <Link
-            to="/login"
-            className="font-headline font-bold tracking-tight px-6 py-2 rounded-lg border border-outline-variant/20 hover:bg-surface-container-low transition-colors active:scale-95"
-          >
-            Login
-          </Link>
-        </div>
-      </div>
+    <div className="min-h-screen bg-white text-zinc-900 font-body antialiased flex flex-col">
+      <StitchHeader authHighlight="signin" />
 
-      <main className="flex-grow flex items-center justify-center px-6 pt-32 pb-20">
-        <div className="w-full max-w-[1200px] md:grid md:grid-cols-2 gap-0 overflow-hidden bg-surface-container-lowest rounded-xl shadow-[0_40px_80px_rgba(0,0,0,0.08)]">
-          <div className="relative hidden md:block min-h-[600px] bg-primary">
-            <img
-              className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity"
-              src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=1350&q=80"
-              alt="Architectural style imagery"
+      <main className="flex-1 px-4 md:px-8 py-10 md:py-14 max-w-lg mx-auto w-full">
+        <header className="mb-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-black tracking-tight">Login</h1>
+          <p className="mt-2 text-lg text-zinc-600">Welcome</p>
+          <p className="mt-2 text-sm text-zinc-500">Please enter your username and password</p>
+        </header>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label htmlFor="login-username" className="sr-only">
+              User name
+            </label>
+            <input
+              id="login-username"
+              type="email"
+              autoComplete="username"
+              placeholder="User name"
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              className="w-full rounded-lg bg-zinc-100 border-0 px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-300"
             />
-            <div className="absolute inset-0 flex flex-col justify-end p-12 bg-gradient-to-t from-black/80 to-transparent">
-              <h2 className="font-headline text-5xl font-extrabold tracking-tighter text-white mb-4 leading-none">
-                CURATED<br />EXCELLENCE.
-              </h2>
-              <p className="text-on-primary/60 text-sm tracking-widest uppercase font-label">
-                The Digital Gallery for Modern Visionaries
-              </p>
-            </div>
           </div>
 
-          <div className="p-8 md:p-20 flex items-center justify-center">
-            <div className="w-full max-w-[450px]">
-              <header className="mb-10">
-                <span className="text-xs font-bold tracking-[0.2em] text-outline uppercase">Access Portal</span>
-                <h1 className="font-headline text-4xl font-extrabold tracking-tighter text-primary mt-2">Login</h1>
-              </header>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
-                  <label className="text-xs font-bold tracking-wider text-on-surface-variant uppercase ml-1">Username</label>
-                  <div className="relative">
-                    <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-xl">person</span>
-                    <input
-                      type="email"
-                      placeholder="yourname@monolith.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-xl text-on-surface placeholder:text-outline/50 font-body focus:ring-0 focus:bg-surface-container-lowest transition-all"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-xs font-bold tracking-wider text-on-surface-variant uppercase ml-1">Password</label>
-                  <div className="relative">
-                    <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-xl">lock</span>
-                    <input
-                      type="password"
-                      placeholder="••••••••"
-                      value={formData.password}
-                      onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                      className="w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-xl text-on-surface placeholder:text-outline/50 font-body focus:ring-0 focus:bg-surface-container-lowest transition-all"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between">
-                  <label className="flex items-center gap-3 cursor-pointer text-xs font-medium text-secondary">
-                    <input
-                      type="checkbox"
-                      className="w-5 h-5 rounded border-outline-variant/40 text-primary focus:ring-0 checked:bg-primary checked:border-primary transition-all"
-                    />
-                    Keep me signed in
-                  </label>
-                  <Link to="#" className="text-xs font-bold text-primary hover:opacity-60 transition-opacity">
-                    Forgot Password?
-                  </Link>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-[linear-gradient(135deg,#000000_0%,#3b3b3b_100%)] text-on-primary py-5 rounded-xl font-headline font-bold text-lg tracking-tight shadow-[0_20px_40px_rgba(26,28,28,0.06)] hover:opacity-90 active:scale-[0.98] transition-all disabled:opacity-50 flex items-center justify-center gap-2 group"
-                  disabled={loading}>
-                  {loading ? 'Signing in...' : 'Sign In'}
-                  {!loading && (
-                    <span className="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">
-                      arrow_forward
-                    </span>
-                  )}
-                </button>
-              </form>
-
-              <p className="mt-8 text-center text-sm text-secondary">
-                Don’t have an account?{' '}
-                <Link to="/signup" className="text-primary font-bold hover:underline">
-                  Sign Up
-                </Link>
-              </p>
-            </div>
+          <div>
+            <label htmlFor="login-password" className="sr-only">
+              Password
+            </label>
+            <input
+              id="login-password"
+              type="password"
+              autoComplete="current-password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+              className="w-full rounded-lg bg-zinc-100 border-0 px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-300"
+            />
           </div>
+
+          <button
+            type="submit"
+            disabled={loading}
+            className="mt-2 inline-flex items-center justify-center rounded-lg bg-black px-8 py-2.5 text-sm font-medium text-white hover:bg-zinc-800 transition-colors disabled:opacity-50"
+          >
+            {loading ? 'Signing in…' : 'Sign in'}
+          </button>
+        </form>
+
+        <div className="relative my-10">
+          <div className="absolute inset-0 flex items-center" aria-hidden="true">
+            <div className="w-full border-t border-zinc-200" />
+          </div>
+          <div className="relative flex justify-center">
+            <span className="bg-white px-3 text-xs text-zinc-500">or</span>
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+          <Link
+            to="/signup"
+            className="inline-flex items-center justify-center rounded-lg bg-black px-8 py-2.5 text-sm font-medium text-white hover:bg-zinc-800 transition-colors w-fit"
+          >
+            Sign up
+          </Link>
+          <p className="text-sm text-zinc-500">if you do not have any account</p>
         </div>
       </main>
-
-      <footer className="bg-surface border-t border-outline-variant/10 py-10">
-        <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-secondary">
-          <span className="font-black text-on-surface uppercase font-headline">MONOLITH</span>
-          <div className="flex gap-8">
-            <a href="#" className="transition hover:text-primary">Privacy</a>
-            <a href="#" className="transition hover:text-primary">Terms</a>
-            <a href="#" className="transition hover:text-primary">Contact</a>
-          </div>
-          <span>© 2024 MONOLITH. All rights reserved.</span>
-        </div>
-      </footer>
     </div>
   );
 };

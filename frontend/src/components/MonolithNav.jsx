@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 const NavLink = ({ to, children, activeClassName, className }) => {
@@ -13,7 +13,13 @@ const NavLink = ({ to, children, activeClassName, className }) => {
 };
 
 const MonolithNav = () => {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/', { replace: true });
+  };
 
   const linkBase =
     'font-headline font-bold tracking-tight text-sm uppercase transition-colors';
@@ -25,6 +31,25 @@ const MonolithNav = () => {
       <div className="flex justify-between items-center px-8 md:px-12 py-6 w-full max-w-[1920px] mx-auto">
         <div className="text-2xl font-black tracking-tighter text-black font-headline">
           <Link to="/">MONOLITH</Link>
+        </div>
+
+        <div className="flex md:hidden items-center">
+          {!user ? (
+            <Link
+              to="/login"
+              className="font-headline font-bold tracking-tight px-4 py-2 rounded-lg border border-outline-variant/20 hover:bg-surface-container-low text-sm"
+            >
+              Login
+            </Link>
+          ) : (
+            <button
+              type="button"
+              onClick={handleLogout}
+              className="font-headline font-bold tracking-tight text-sm uppercase text-black border border-outline-variant/20 px-4 py-2 rounded-lg hover:bg-surface-container-low"
+            >
+              Logout
+            </button>
+          )}
         </div>
 
         <div className="hidden md:flex flex-1 justify-center items-center gap-12">
@@ -97,6 +122,13 @@ const MonolithNav = () => {
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-Rq6RSJQpe_K1AU93Dj6JtRGTw0r1rp6q6nH80xCWiMoQBa0uxLAT8DmcwOMLRNu7kAVtEpKamrCdNrp_MSxhRIBru4CqohAO8xPrKGVXqnyptp7Iuxi436WE7j0SnZWtmk_yy3s8j-r6BMBCngx2YkKFSQ6HSeH6JjPuKEGR2868gQjDLXDgfIp7k_pK9Zz7bIOAgW9banJjFsNO4zpcvMsi0V_L--7pJ_K-pCnWSlPJDRQ57QbB6omHHYPGKyXByz9BJqMELA"
                 />
               </div>
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="font-headline font-bold tracking-tight text-sm uppercase text-black border border-outline-variant/20 px-4 py-2 rounded-lg hover:bg-surface-container-low transition-colors active:scale-95"
+              >
+                Logout
+              </button>
             </div>
           )}
         </div>
