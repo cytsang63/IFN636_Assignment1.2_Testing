@@ -1,7 +1,7 @@
 {
-  "name": "task-manager-backend",
+  "name": "developer-portfolio-manager-backend",
   "version": "1.0.0",
-  "description": "Backend for Task Manager App",
+  "description": "Backend API for Developer Portfolio Manager",
   "main": "server.js",
   "scripts": {
     "test": "mocha",
@@ -27,6 +27,6 @@
     "nodemon": "^2.0.15",
     "sinon": "^19.0.2"
   },
-  "author": "Task Manager Team",
+  "author": "Developer Portfolio Manager",
   "license": "ISC"
 }

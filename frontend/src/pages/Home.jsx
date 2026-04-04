@@ -38,7 +38,7 @@ const Home = () => {
             <div className="group flex flex-col">
               <div className="relative overflow-hidden rounded-lg aspect-[16/10] bg-surface-container">
                 <img
-                  alt="Monolith Villa"
+                  alt="Portfolio showcase villa"
                   className="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIGar9qQDpNDHcwjb7ZlaE9dIhN_N4x7Q0PwU2RZh4BSzjUEVJltvxGYfEMK_WN7U-U-pz44cIll7ya3OcKr7tZWOw5QP83WvqYbK7hS00_rGZxQOL797WJ_op7ZF0ZkU6GSAZhOYC6WQSgRcVhP8FLwIggmN14pPaunCmjiVn73qj7wfsDFgV08K5Y3XwNmllzUJs87CXLsaJq3vcZAl4IEtkyokBRCTqwzZu4uYqn6BiuZzWvOXgZEBKf1ypgEN_GgReOFi8mw"
                 />
@@ -51,7 +51,7 @@ const Home = () => {
               <div className="-mt-12 ml-12 p-10 bg-surface-container-lowest shadow-ambient relative z-10 rounded-lg">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-3xl font-black tracking-tight mb-1 font-headline">Monolith Villa</h3>
+                    <h3 className="text-3xl font-black tracking-tight mb-1 font-headline">Alpine Residence</h3>
                     <p className="text-xs text-neutral-400 font-medium">Last edited: Oct 12, 2024</p>
                   </div>
                   <div className="flex gap-2">
@@ -117,7 +117,9 @@ const Home = () => {
           <div className="flex items-center justify-between mb-16">
             <div>
               <h2 className="text-4xl font-black tracking-tighter mb-2 font-headline">Curated for You</h2>
-              <p className="text-on-surface-variant font-medium">Exceptional works from the global Monolith collective.</p>
+              <p className="text-on-surface-variant font-medium">
+                Exceptional works from the Developer Portfolio Manager community.
+              </p>
             </div>
             <Link className="font-headline font-bold border-b-2 border-black pb-1 hover:opacity-60 transition-opacity" to="#">
               Explore All
@@ -188,9 +190,9 @@ const Home = () => {
       <footer className="bg-neutral-50 w-full py-20 px-8 md:px-12 mt-20">
         <div className="flex flex-col md:flex-row justify-between items-start gap-12 w-full max-w-[1920px] mx-auto">
           <div className="flex flex-col gap-6">
-            <div className="font-headline font-black text-lg text-black">MONOLITH</div>
+            <div className="font-headline font-black text-lg text-black">Developer Portfolio Manager</div>
             <p className="font-body text-xs font-medium tracking-widest uppercase text-neutral-400">
-              © 2024 MONOLITH. THE CURATED MONOLITH.
+              © {new Date().getFullYear()} Developer Portfolio Manager. All rights reserved.
             </p>
           </div>
           <div className="flex gap-16">

@@ -91,7 +91,7 @@ const Landing = () => {
 
       <footer className="border-t border-zinc-200 mt-auto">
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-500 uppercase tracking-wider">
-          <span>© {new Date().getFullYear()} The curated monolith</span>
+          <span>© {new Date().getFullYear()} Developer Portfolio Manager</span>
           <div className="flex gap-6">
             <Link to="/portfolio/explore" className="hover:text-zinc-900">
               Portfolio

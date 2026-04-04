@@ -29,8 +29,15 @@ const MonolithNav = () => {
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-ambient">
       <div className="flex justify-between items-center px-8 md:px-12 py-6 w-full max-w-[1920px] mx-auto">
-        <div className="text-2xl font-black tracking-tighter text-black font-headline">
-          <Link to="/">MONOLITH</Link>
+        <div className="max-w-[min(100%,14rem)] md:max-w-none font-headline">
+          <Link
+            to="/"
+            className="block text-lg md:text-2xl font-black tracking-tighter text-black leading-tight"
+            title="Developer Portfolio Manager"
+          >
+            <span className="md:hidden">DPM</span>
+            <span className="hidden md:inline">Developer Portfolio Manager</span>
+          </Link>
         </div>
 
         <div className="flex md:hidden items-center">

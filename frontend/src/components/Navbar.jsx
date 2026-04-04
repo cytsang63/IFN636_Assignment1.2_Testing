@@ -27,7 +27,9 @@ const Navbar = () => {
 
   return (
     <nav className="bg-blue-600 text-white p-4 flex justify-between items-center">
-      <Link to="/" className="text-2xl font-bold">Your apps name</Link>
+      <Link to="/" className="text-xl font-bold max-w-xs truncate sm:max-w-none sm:whitespace-normal" title="Developer Portfolio Manager">
+        Developer Portfolio Manager
+      </Link>
       <div className="space-x-3">
         <Link to="/" className="hover:text-slate-200">Home</Link>
         {!user && <Link to="/login" className="hover:text-slate-200">Login</Link>}
