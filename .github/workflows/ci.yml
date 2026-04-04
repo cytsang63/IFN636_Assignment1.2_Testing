@@ -9,9 +9,12 @@ on:
       - main
 
 jobs:
-  build:
+  backend:
+    name: Backend — install, test
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: backend
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -19,10 +22,40 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Run tests
-        run: npm test
+      - name: Run manual tests (Mocha + Chai + Sinon)
+        run: npm run test:manual
+
+  frontend:
+    name: Frontend — install, test, build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run manual tests (Mocha + Chai + Sinon)
+        run: npm run test:manual
+
+      - name: Build production bundle
+        run: npm run build
+        env:
+          CI: true

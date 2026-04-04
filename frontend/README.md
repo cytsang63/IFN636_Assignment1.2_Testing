@@ -1,70 +1,91 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Assessment 1.2 (Total Marks **20**)**
 
-## Available Scripts
+Assignment: **Software requirements analysis and design (**Full-Stack CRUD Application Development with DevOps Practices**)**
 
-In the project directory, you can run:
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Developer Portfolio Manager**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+A Full-Stack MERN Hub for Showcasing Engineering Talent
 
-### `npm test`
+The Developer Portfolio Manager is a dynamic web application that allows developers to go beyond a static resume. It provides a centralized workspace to manage project lifecycles, showcase technical expertise through a curated public gallery, and maintain content integrity through an administrative moderation layer.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Key Features
 
-### `npm run build`
+Developer Workspace (User Panel)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* **Project CRUD: Create, Read, Update, and Delete project entries in real-time.**
+* **Media Management: Upload thumbnails and link to GitHub repositories or live demos.**
+* **Profile Control: Manage professional summaries and technical skill tags (e.g., React, Python, SysML).**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Public Discovery (Recruiter View)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* **Bento-Grid Gallery: A modern, responsive layout for browsing projects.**
+* **Dynamic Filtering: Filter the entire database by technology stack to find specific expertise.**
+* **Direct Contact: Integrated links to developer socials and downloadable PDF resumes.**
+ 
+Administrative Governance
 
-### `npm run eject`
+* **Moderation Dashboard: Global view of all system-wide projects.**
+* **Content Control: Ability to "Flag" or "Delete" projects that violate platform guidelines.**
+* **System Metrics: High-level tracking of user growth and project submission volume.**
+ 
+Architecture & Design Strategy
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This project was developed following a strict Software Development Life Cycle (SDLC):
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* **Requirements Modeling: Used SysML Requirements Diagrams to map user stories to technical constraints.**
+* **Structural Blueprint: Developed a SysML Block Definition Diagram (BDD) to define the hierarchy between the Frontend components, the REST API, and the MongoDB schema.**
+* **UI/UX Prototyping: High-fidelity wireframes were designed in Figma, focusing on a "clean-code" aesthetic and intuitive navigation.**
+  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Getting Started
 
-## Learn More
+Prerequisites
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* **Node.js (v18 or higher)**
+* **MongoDB Atlas Account**
+* **NPM or Yarn**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone the Repo
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+git clone https://github.com/your-username/developer-portfolio-manager.git
 
-### Analyzing the Bundle Size
+2. Install Dependencies (Backend & Frontend)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# From root
+npm install
+cd frontend && npm install
 
-### Making a Progressive Web App
+3. Environment Setup
+Create a .env file in the backend folder:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
 
-### Advanced Configuration
+4. Run Locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# From backend root
+npm run dev
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+CI/CD & Version Control
 
-### `npm run build` fails to minify
+This project utilizes GitHub Actions for an automated deployment pipeline.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* **Branching Strategy: Uses feature/* branches for development, merged into main via reviewed Pull Requests.**
+* **Automated Deployment: Every push to the main branch triggers an automated build and deployment to the production environment (e.g., Render/Vercel).**
+
+---
+
+**GitHub link of the starter project: **[https://github.com/cytsang63/IFN636_Assignment1.2_Testing.git](https://github.com/cytsang63/IFN636_Assignment1.2_Testing.git)
+
+---
+
